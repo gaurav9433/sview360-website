@@ -647,27 +647,180 @@
 
         <!-- ===== TAB 2: HYBRID ===== -->
         <div class="pricing-panel" id="panel-hybrid" role="tabpanel" aria-labelledby="tab-hybrid" hidden>
-          <div class="model-block">
-            <p class="model-lead">Keep recording locally on your existing NVRs while SView360 delivers centralized monitoring, alarm verification, AI-assisted analytics, and reporting from the cloud. Hybrid is priced per camera per month for cloud management, with no rip-and-replace of on-site hardware.</p>
-            <div class="model-grid">
-              <article class="model-card">
-                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
-                <h3>Local Recording Retained</h3>
-                <p>Your on-site NVR/storage continues to record. Retention stays where your data-residency policy needs it.</p>
-              </article>
-              <article class="model-card">
-                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
-                <h3>Cloud Management Layer</h3>
-                <p>Centralized dashboards, alarm verification, AI-assisted analytics, and exception reporting across every site.</p>
-              </article>
-              <article class="model-card">
-                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v6m0 10v6M4.2 4.2l4.3 4.3m7 7 4.3 4.3M1 12h6m10 0h6"/></svg></div>
-                <h3>Bandwidth-Sensitive Sites</h3>
-                <p>Ideal for bank branches, ATMs, and kiosks where uploading full streams to the cloud is impractical.</p>
-              </article>
+          <div class="model-block hybrid-block">
+
+            <!-- Block 1: Dark explainer card -->
+            <div class="hybrid-explainer">
+              <h3 class="he-title">Hybrid Deployment — Local Recording + Cloud Intelligence</h3>
+              <p class="he-body">In hybrid deployment, your cameras continue recording locally to your existing NVR infrastructure — so you keep your hardware investment and your primary video storage stays on-site. SView360 connects via the SLink edge gateway and adds centralized cloud visibility, alarm verification, compliance reporting, evidence management, and AI analytics on top.</p>
+              <p class="he-body">Because your NVR handles primary video storage, your monthly cloud fee is lower than a full cloud deployment — you are only paying for what SView360 provides in the cloud, not for replacing infrastructure you already own.</p>
+              <div class="hybrid-pills">
+                <span class="he-pill">Keep Your NVR Investment</span>
+                <span class="he-pill">Lower Monthly Cloud Fee</span>
+                <span class="he-pill">One-Time Platform License</span>
+              </div>
             </div>
-            <p class="model-note">Hybrid pricing depends on camera count, sites, retention policy, and analytics modules. We'll scope it with you.</p>
-            <div class="center-cta"><a class="btn btn-cta" href="mailto:sales@seple.in" aria-label="Request hybrid deployment pricing">Request Hybrid Pricing</a></div>
+
+            <!-- Block 1b: Comparison strip -->
+            <div class="compare-strip">
+              <div class="compare-col">
+                <span class="compare-label">Full Cloud</span>
+                <span class="compare-ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>
+                <p class="compare-body">SView360 manages everything — live streaming, video storage, AI processing, and infrastructure. No NVR required. Higher monthly fee reflects full infrastructure ownership by SView360.</p>
+                <div class="compare-price">From ₹149/camera/month</div>
+                <div class="compare-sub">No one-time license required for cloud plans</div>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">Hybrid</span>
+                <span class="compare-ico orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+                <p class="compare-body">Your NVR handles primary video storage. SView360 adds cloud visibility, compliance, alarms, evidence, and AI on top. Lower monthly fee because you absorb primary storage cost.</p>
+                <div class="compare-price">From ₹99/camera/month</div>
+                <div class="compare-sub">One-time platform license required</div>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">On-Premise</span>
+                <span class="compare-ico blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>
+                <p class="compare-body">Perpetual license. All infrastructure stays within your network. No recurring cloud fees. Ideal for air-gapped, regulated, or high-security environments.</p>
+                <div class="compare-price">Perpetual license + AMC</div>
+                <div class="compare-sub">Contact sales for project quotation</div>
+              </div>
+            </div>
+
+            <!-- Block 2: One-time platform license table -->
+            <div class="price-block">
+              <h3 class="block-title">One-Time Platform License</h3>
+              <p class="block-sub">A one-time platform license activates SView360 on your infrastructure, priced per camera and tiered by deployment size.</p>
+              <div class="table-wrap">
+                <table class="price-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Deployment Size</th>
+                      <th scope="col">Per-Camera License</th>
+                      <th scope="col">Example Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Up to 50 cameras</td><td class="cell-strong">₹2,000/camera</td><td>50 cameras → ₹1,00,000</td></tr>
+                    <tr><td>51–200 cameras</td><td class="cell-strong">₹1,600/camera</td><td>200 cameras → ₹3,20,000</td></tr>
+                    <tr><td>201–500 cameras</td><td class="cell-strong">₹1,400/camera</td><td>500 cameras → ₹7,00,000</td></tr>
+                    <tr><td>500+ cameras</td><td class="cell-strong">Custom</td><td>Contact sales for project quotation</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-note">The one-time platform license covers deployment, configuration, and 30 days of implementation support. Applicable for both hybrid and on-premise deployments.</p>
+              <p class="table-note">The one-time license is not required for cloud-only deployments. Cloud plans are activated directly with no upfront setup fee.</p>
+            </div>
+
+            <!-- Block 3: Monthly cloud fee — hybrid plans -->
+            <div class="price-block">
+              <h3 class="block-title">Monthly Cloud Fee — Hybrid Plans</h3>
+              <p class="block-sub">Hybrid pricing is lower than full cloud because your NVR absorbs primary video storage cost. You pay only for what SView360 provides in the cloud.</p>
+              <div class="matrix-callout">💡 Full cloud equivalent prices are shown in brackets for comparison. Hybrid saves you ₹50–₹150 per camera per month versus full cloud.</div>
+              <div class="table-wrap">
+                <table class="price-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tier</th>
+                      <th scope="col">What SView360 Provides in Cloud</th>
+                      <th scope="col">Primary Video Storage</th>
+                      <th scope="col">Cloud Retention</th>
+                      <th scope="col">Hybrid Price</th>
+                      <th scope="col">vs Full Cloud</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Platform Only</td>
+                      <td>Live dashboard · Alarm management · Compliance logs · Site hierarchy · User access control · Evidence workflows</td>
+                      <td>Your NVR (local only)</td>
+                      <td>Metadata only — no cloud video</td>
+                      <td class="cell-strong">₹99/camera/month</td>
+                      <td><span class="cell-green">₹149/month</span><span class="cell-green-block">Save ₹50/camera/month</span></td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Standard Cloud Mirror</td>
+                      <td>Everything in Platform Only + mirrored video copy in cloud</td>
+                      <td>Your NVR (primary) + cloud copy (secondary)</td>
+                      <td>90-day cloud mirror</td>
+                      <td class="cell-strong">₹198/camera/month<span class="cell-sub">(₹99 base + ₹99 mirror)</span></td>
+                      <td><span class="cell-green">₹248/month</span><span class="cell-green-block">Save ₹50/camera/month</span></td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Compliance Cloud Mirror</td>
+                      <td>Everything in Standard + extended archive access</td>
+                      <td>Your NVR (primary) + cloud copy (secondary)</td>
+                      <td>180-day cloud mirror</td>
+                      <td class="cell-strong">₹248/camera/month<span class="cell-sub">(₹99 base + ₹149 mirror)</span></td>
+                      <td><span class="cell-green">₹298/month</span><span class="cell-green-block">Save ₹50/camera/month</span></td>
+                    </tr>
+                    <tr class="row-highlight">
+                      <td>Long-Term Archive</td>
+                      <td>Everything in Compliance + litigation-grade retention</td>
+                      <td>Your NVR (primary) + cloud copy (secondary)</td>
+                      <td>365-day cloud mirror</td>
+                      <td class="cell-strong">₹298/camera/month<span class="cell-sub">(₹99 base + ₹199 mirror)</span></td>
+                      <td><span class="cell-green">₹348/month</span><span class="cell-green-block">Save ₹50/camera/month</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-note">Hybrid pricing is lower because primary video storage remains on your NVR. Cloud recording consumption depends on resolution, frame rate, motion frequency, and H.265 compression. Contact us to estimate storage requirements.</p>
+            </div>
+
+            <!-- Block 4: Illustrative total cost examples -->
+            <div class="price-block">
+              <h3 class="block-title">Illustrative Total Cost Examples</h3>
+              <p class="block-sub">Sample Year 1 investment across common hybrid deployment sizes.</p>
+              <div class="scenario-grid">
+                <article class="scenario-card">
+                  <span class="scenario-label">Scenario 1</span>
+                  <h4 class="scenario-title">50 Cameras · Hybrid Platform Only</h4>
+                  <div class="scenario-lines">
+                    <div class="sline"><span>One-Time License</span><span>₹1,00,000</span></div>
+                    <div class="sline"><span>Monthly Cloud Fee</span><span>₹4,950/month</span></div>
+                    <div class="sline-sub">(50 × ₹99/camera)</div>
+                    <div class="sline"><span>Annual Cloud Total</span><span>₹59,400/year</span></div>
+                  </div>
+                  <div class="scenario-total"><span>Year 1 Total Investment</span><span>₹1,59,400</span></div>
+                  <p class="scenario-vs">vs Full Cloud (50 × ₹149): ₹1,89,400 Year 1 — you save ₹30,000</p>
+                  <p class="scenario-use">Ideal for: Retail chains, office campuses, small branch networks with existing NVR infrastructure.</p>
+                </article>
+
+                <article class="scenario-card">
+                  <span class="scenario-label">Scenario 2</span>
+                  <h4 class="scenario-title">200 Cameras · Standard Cloud Mirror</h4>
+                  <div class="scenario-lines">
+                    <div class="sline"><span>One-Time License</span><span>₹3,20,000</span></div>
+                    <div class="sline"><span>Monthly Cloud Fee</span><span>₹39,600/month</span></div>
+                    <div class="sline-sub">(200 × ₹198/camera)</div>
+                    <div class="sline"><span>Annual Cloud Total</span><span>₹4,75,200/year</span></div>
+                  </div>
+                  <div class="scenario-total"><span>Year 1 Total Investment</span><span>₹7,95,200</span></div>
+                  <p class="scenario-vs">vs Full Cloud (200 × ₹248): ₹9,15,200 Year 1 — you save ₹1,20,000</p>
+                  <p class="scenario-use">Ideal for: Multi-branch enterprises, logistics networks, healthcare networks with existing recording infrastructure.</p>
+                </article>
+
+                <article class="scenario-card">
+                  <span class="scenario-label">Scenario 3</span>
+                  <h4 class="scenario-title">500 Cameras · Compliance Cloud Mirror</h4>
+                  <div class="scenario-lines">
+                    <div class="sline"><span>One-Time License</span><span>₹7,00,000</span></div>
+                    <div class="sline"><span>Monthly Cloud Fee</span><span>₹1,24,000/month</span></div>
+                    <div class="sline-sub">(500 × ₹248/camera)</div>
+                    <div class="sline"><span>Annual Cloud Total</span><span>₹14,88,000/year</span></div>
+                  </div>
+                  <div class="scenario-total"><span>Year 1 Total Investment</span><span>₹21,88,000</span></div>
+                  <p class="scenario-vs">vs Full Cloud (500 × ₹298): ₹24,88,000 Year 1 — you save ₹3,00,000</p>
+                  <p class="scenario-use">Ideal for: PSU banks, government agencies, regulated enterprise networks with established NVR deployments.</p>
+                </article>
+              </div>
+              <p class="table-note">Figures are illustrative estimates only. Actual costs depend on camera count, deployment model, retention selected, analytics modules, and support scope. Contact us for a project-specific quotation.</p>
+            </div>
+
+            <div class="btn-row btn-row-center">
+              <a class="btn btn-cta" href="mailto:sales@seple.in" aria-label="Get a hybrid deployment quote">Get a Hybrid Deployment Quote →</a>
+              <a class="btn btn-outline-blue" href="mailto:sales@seple.in" aria-label="Talk to our team about hybrid deployment">Talk to Our Team</a>
+            </div>
           </div>
         </div>
 
