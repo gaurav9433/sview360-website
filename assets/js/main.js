@@ -45,7 +45,7 @@
   }
 
   /* ---------- 5. Intersection Observer fade-in-up ---------- */
-  var revealEls = document.querySelectorAll(".card, .feature-card, .pricing-card, .step, .value-card, .gov-card, .deploy-card, .brand-badge");
+  var revealEls = document.querySelectorAll(".card, .feature-card, .pricing-card, .step, .value-card, .gov-card, .deploy-card, .brand-badge, .industry-card, .problem-card, .sol-card, .scenario-card, .model-card, .faq-item, .trust-item");
   revealEls.forEach(function (el) { el.classList.add("reveal"); });
 
   if ("IntersectionObserver" in window) {
