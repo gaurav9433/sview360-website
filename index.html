@@ -534,86 +534,167 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker">Pricing</span>
-          <h2>Simple INR Pricing for Indian Deployments</h2>
-          <p class="section-intro">Choose a plan based on cameras, retention needs, users, and deployment model. Custom enterprise pricing is available for large rollouts.</p>
+          <h2>Transparent Pricing for Indian Deployments</h2>
+          <p class="section-intro pricing-subtitle">SView360 is priced per camera per month. Choose your deployment model, select a recording retention tier, and add AI analytics only where you need it. Perpetual licensing available for on-premise and private deployments.</p>
         </div>
 
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h3 class="plan-name">Basic</h3>
-            <div class="plan-price">₹999<span>/month</span></div>
-            <p class="plan-for">For small offices and single-site deployments.</p>
-            <ul class="feat-list">
-              <li><span class="check" aria-hidden="true"></span> Up to 16 cameras</li>
-              <li><span class="check" aria-hidden="true"></span> Live monitoring</li>
-              <li><span class="check" aria-hidden="true"></span> Basic recording visibility</li>
-              <li><span class="check" aria-hidden="true"></span> Email alerts</li>
-              <li><span class="check" aria-hidden="true"></span> Standard access control</li>
-              <li><span class="check" aria-hidden="true"></span> Basic reports</li>
-            </ul>
-            <a class="btn btn-blue btn-block" href="mailto:sales@seple.in" aria-label="Get started with the Basic plan">Get Started</a>
-          </article>
+        <!-- Deployment model selector -->
+        <div class="deploy-tabs" role="tablist" aria-label="Deployment model">
+          <button class="deploy-tab is-active" id="tab-cloud" role="tab" aria-selected="true" aria-controls="panel-cloud" data-tab="cloud" type="button">Cloud — Per Camera/Month</button>
+          <button class="deploy-tab" id="tab-hybrid" role="tab" aria-selected="false" aria-controls="panel-hybrid" data-tab="hybrid" type="button">Hybrid — Local + Cloud</button>
+          <button class="deploy-tab" id="tab-onprem" role="tab" aria-selected="false" aria-controls="panel-onprem" data-tab="onprem" type="button">On-Premise / Private</button>
+        </div>
 
-          <article class="pricing-card">
-            <h3 class="plan-name">Compliance</h3>
-            <div class="plan-price">₹2,499<span>/month</span></div>
-            <p class="plan-for">For regulated and multi-site businesses.</p>
-            <ul class="feat-list">
-              <li><span class="check" aria-hidden="true"></span> Up to 50 cameras</li>
-              <li><span class="check" aria-hidden="true"></span> Extended recording visibility</li>
-              <li><span class="check" aria-hidden="true"></span> Compliance dashboards</li>
-              <li><span class="check" aria-hidden="true"></span> Recording gap alerts</li>
-              <li><span class="check" aria-hidden="true"></span> User activity logs</li>
-              <li><span class="check" aria-hidden="true"></span> Scheduled reports</li>
-            </ul>
-            <a class="btn btn-blue btn-block" href="mailto:sales@seple.in" aria-label="Get started with the Compliance plan">Get Started</a>
-          </article>
+        <!-- ===== TAB 1: CLOUD ===== -->
+        <div class="pricing-panel" id="panel-cloud" role="tabpanel" aria-labelledby="tab-cloud">
 
-          <article class="pricing-card pricing-featured">
-            <span class="popular-tag">Most Popular</span>
-            <h3 class="plan-name">Command</h3>
-            <div class="plan-price">₹4,999<span>/month</span></div>
-            <p class="plan-for">For active security operations teams.</p>
-            <ul class="feat-list">
-              <li><span class="check" aria-hidden="true"></span> Up to 150 cameras</li>
-              <li><span class="check" aria-hidden="true"></span> Alarm verification workflow</li>
-              <li><span class="check" aria-hidden="true"></span> SOP-based response</li>
-              <li><span class="check" aria-hidden="true"></span> Escalation tracking</li>
-              <li><span class="check" aria-hidden="true"></span> AI-assisted analytics starter pack</li>
-              <li><span class="check" aria-hidden="true"></span> Incident and evidence workflows</li>
-            </ul>
-            <a class="btn btn-blue btn-block" href="mailto:sales@seple.in" aria-label="Get started with the Command plan">Get Started</a>
-          </article>
+          <div class="billing-toggle" role="group" aria-label="Billing period">
+            <button class="bt-opt is-active" data-billing="monthly" type="button" aria-pressed="true">Monthly</button>
+            <button class="bt-opt" data-billing="annual" type="button" aria-pressed="false">Annual (Save 15%)</button>
+          </div>
 
-          <article class="pricing-card">
-            <h3 class="plan-name">Banking</h3>
-            <div class="plan-price">₹9,999<span>/month</span></div>
-            <p class="plan-for">For larger branch and enterprise deployments.</p>
-            <ul class="feat-list">
-              <li><span class="check" aria-hidden="true"></span> Up to 500 cameras</li>
-              <li><span class="check" aria-hidden="true"></span> Advanced reporting</li>
-              <li><span class="check" aria-hidden="true"></span> Multi-level hierarchy</li>
-              <li><span class="check" aria-hidden="true"></span> White-label option</li>
-              <li><span class="check" aria-hidden="true"></span> Priority support</li>
-              <li><span class="check" aria-hidden="true"></span> Partner billing support</li>
-            </ul>
-            <a class="btn btn-blue btn-block" href="mailto:sales@seple.in" aria-label="Get started with the Banking plan">Get Started</a>
-          </article>
+          <div class="cloud-pricing-grid" id="cloudGrid">
+            <!-- Starter -->
+            <article class="pricing-card">
+              <h3 class="plan-name">Starter</h3>
+              <div class="plan-price">₹149<span class="plan-unit">/camera/month</span></div>
+              <p class="min-note">Minimum 4 cameras</p>
+              <p class="annual-line">₹1,521/camera/year — save 15%</p>
+              <ul class="feat-list">
+                <li><span class="check" aria-hidden="true"></span> Live monitoring dashboard</li>
+                <li><span class="check" aria-hidden="true"></span> 7-day cloud recording visibility</li>
+                <li><span class="check" aria-hidden="true"></span> Basic site &amp; camera management</li>
+                <li><span class="check" aria-hidden="true"></span> Email alerts</li>
+                <li><span class="check" aria-hidden="true"></span> Up to 5 users</li>
+                <li><span class="check" aria-hidden="true"></span> Standard support</li>
+              </ul>
+              <a class="btn btn-outline-blue btn-block" href="mailto:sales@seple.in" aria-label="Start a free trial of the Starter plan">Start Free Trial</a>
+            </article>
 
-          <article class="pricing-card">
-            <h3 class="plan-name">Enterprise</h3>
-            <div class="plan-price plan-price-custom">Custom pricing</div>
-            <p class="plan-for">For PSU, banking, and large enterprise rollouts.</p>
-            <ul class="feat-list">
-              <li><span class="check" aria-hidden="true"></span> Custom camera count</li>
-              <li><span class="check" aria-hidden="true"></span> Dedicated deployment option</li>
-              <li><span class="check" aria-hidden="true"></span> Advanced onboarding</li>
-              <li><span class="check" aria-hidden="true"></span> Custom integrations</li>
-              <li><span class="check" aria-hidden="true"></span> Enterprise support</li>
-              <li><span class="check" aria-hidden="true"></span> Private deployment available on request</li>
-            </ul>
-            <a class="btn btn-cta btn-block" href="mailto:sales@seple.in" aria-label="Contact sales for Enterprise pricing">Contact Sales</a>
-          </article>
+            <!-- Operations -->
+            <article class="pricing-card">
+              <h3 class="plan-name">Operations</h3>
+              <div class="plan-price">₹249<span class="plan-unit">/camera/month</span></div>
+              <p class="min-note">Minimum 8 cameras</p>
+              <p class="annual-line">₹2,541/camera/year — save 15%</p>
+              <ul class="feat-list">
+                <li><span class="check" aria-hidden="true"></span> Everything in Starter</li>
+                <li><span class="check" aria-hidden="true"></span> 30-day cloud recording visibility</li>
+                <li><span class="check" aria-hidden="true"></span> Multi-site dashboard</li>
+                <li><span class="check" aria-hidden="true"></span> Recording gap alerts</li>
+                <li><span class="check" aria-hidden="true"></span> User activity audit logs</li>
+                <li><span class="check" aria-hidden="true"></span> Up to 20 users</li>
+              </ul>
+              <a class="btn btn-outline-blue btn-block" href="mailto:sales@seple.in" aria-label="Get started with the Operations plan">Get Started</a>
+            </article>
+
+            <!-- Command -->
+            <article class="pricing-card pricing-featured">
+              <span class="popular-tag">Most Popular</span>
+              <h3 class="plan-name">Command</h3>
+              <div class="plan-price">₹399<span class="plan-unit">/camera/month</span></div>
+              <p class="min-note">Minimum 16 cameras</p>
+              <p class="annual-line">₹4,071/camera/year — save 15%</p>
+              <ul class="feat-list">
+                <li><span class="check" aria-hidden="true"></span> Everything in Operations</li>
+                <li><span class="check" aria-hidden="true"></span> 90-day cloud recording visibility</li>
+                <li><span class="check" aria-hidden="true"></span> Alarm verification workflow</li>
+                <li><span class="check" aria-hidden="true"></span> SOP-based operator response</li>
+                <li><span class="check" aria-hidden="true"></span> Escalation &amp; incident tracking</li>
+                <li><span class="check" aria-hidden="true"></span> Evidence management &amp; case folders</li>
+                <li><span class="check" aria-hidden="true"></span> Up to 50 users</li>
+                <li><span class="check" aria-hidden="true"></span> Priority support</li>
+              </ul>
+              <a class="btn btn-blue btn-block" href="mailto:sales@seple.in" aria-label="Get started with the Command plan">Get Started</a>
+            </article>
+
+            <!-- Banking -->
+            <article class="pricing-card">
+              <h3 class="plan-name">Banking</h3>
+              <div class="plan-price">₹599<span class="plan-unit">/camera/month</span></div>
+              <p class="min-note">Minimum 50 cameras</p>
+              <p class="annual-line">₹6,111/camera/year — save 15%</p>
+              <ul class="feat-list">
+                <li><span class="check" aria-hidden="true"></span> Everything in Command</li>
+                <li><span class="check" aria-hidden="true"></span> Multi-level hierarchy (Region / Zone / Branch)</li>
+                <li><span class="check" aria-hidden="true"></span> Compliance &amp; exception reporting</li>
+                <li><span class="check" aria-hidden="true"></span> White-label branding option</li>
+                <li><span class="check" aria-hidden="true"></span> Partner billing support</li>
+                <li><span class="check" aria-hidden="true"></span> Dedicated onboarding</li>
+                <li><span class="check" aria-hidden="true"></span> Up to 200 users</li>
+              </ul>
+              <a class="btn btn-outline-blue btn-block" href="mailto:sales@seple.in" aria-label="Contact sales for the Banking plan">Contact Sales</a>
+            </article>
+
+            <!-- Enterprise -->
+            <article class="pricing-card">
+              <h3 class="plan-name">Enterprise</h3>
+              <div class="plan-price plan-price-custom">Custom</div>
+              <p class="min-note">500+ cameras · PSU · Large enterprise</p>
+              <p class="annual-line annual-line-empty" aria-hidden="true"></p>
+              <ul class="feat-list">
+                <li><span class="check" aria-hidden="true"></span> Custom camera count</li>
+                <li><span class="check" aria-hidden="true"></span> Dedicated cloud deployment</li>
+                <li><span class="check" aria-hidden="true"></span> Private / air-gap deployment on request</li>
+                <li><span class="check" aria-hidden="true"></span> Custom integrations &amp; API</li>
+                <li><span class="check" aria-hidden="true"></span> Enterprise SLA &amp; support</li>
+                <li><span class="check" aria-hidden="true"></span> Custom onboarding &amp; commissioning</li>
+              </ul>
+              <a class="btn btn-cta btn-block" href="mailto:sales@seple.in" aria-label="Contact sales for Enterprise pricing">Contact Sales</a>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===== TAB 2: HYBRID ===== -->
+        <div class="pricing-panel" id="panel-hybrid" role="tabpanel" aria-labelledby="tab-hybrid" hidden>
+          <div class="model-block">
+            <p class="model-lead">Keep recording locally on your existing NVRs while SView360 delivers centralized monitoring, alarm verification, AI-assisted analytics, and reporting from the cloud. Hybrid is priced per camera per month for cloud management, with no rip-and-replace of on-site hardware.</p>
+            <div class="model-grid">
+              <article class="model-card">
+                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+                <h3>Local Recording Retained</h3>
+                <p>Your on-site NVR/storage continues to record. Retention stays where your data-residency policy needs it.</p>
+              </article>
+              <article class="model-card">
+                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                <h3>Cloud Management Layer</h3>
+                <p>Centralized dashboards, alarm verification, AI-assisted analytics, and exception reporting across every site.</p>
+              </article>
+              <article class="model-card">
+                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v6m0 10v6M4.2 4.2l4.3 4.3m7 7 4.3 4.3M1 12h6m10 0h6"/></svg></div>
+                <h3>Bandwidth-Sensitive Sites</h3>
+                <p>Ideal for bank branches, ATMs, and kiosks where uploading full streams to the cloud is impractical.</p>
+              </article>
+            </div>
+            <p class="model-note">Hybrid pricing depends on camera count, sites, retention policy, and analytics modules. We'll scope it with you.</p>
+            <div class="center-cta"><a class="btn btn-cta" href="mailto:sales@seple.in" aria-label="Request hybrid deployment pricing">Request Hybrid Pricing</a></div>
+          </div>
+        </div>
+
+        <!-- ===== TAB 3: ON-PREMISE / PRIVATE ===== -->
+        <div class="pricing-panel" id="panel-onprem" role="tabpanel" aria-labelledby="tab-onprem" hidden>
+          <div class="model-block">
+            <p class="model-lead">For PSU, government, and high-security environments, SView360 is available as a private or air-gapped deployment with perpetual per-camera licensing plus annual support &amp; maintenance — no recurring cloud subscription required.</p>
+            <div class="model-grid">
+              <article class="model-card">
+                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/></svg></div>
+                <h3>Perpetual Licensing</h3>
+                <p>One-time per-camera license with optional annual maintenance &amp; support, deployed on your infrastructure.</p>
+              </article>
+              <article class="model-card">
+                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+                <h3>Private / Air-Gap Deployment</h3>
+                <p>Runs in isolated or restricted-network environments with no dependence on external connectivity.</p>
+              </article>
+              <article class="model-card">
+                <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <h3>Enterprise Onboarding</h3>
+                <p>Custom integrations, commissioning, and enterprise SLA aligned to your compliance and audit requirements.</p>
+              </article>
+            </div>
+            <p class="model-note">On-premise &amp; private pricing is scoped per deployment based on camera count, modules, and support tier.</p>
+            <div class="center-cta"><a class="btn btn-cta" href="mailto:sales@seple.in" aria-label="Request an on-premise quote">Request On-Premise Quote</a></div>
+          </div>
         </div>
 
         <p class="pricing-footnote">All prices are indicative and exclusive of GST. Final pricing depends on camera count, retention requirement, deployment model, storage, analytics modules, and support scope.</p>

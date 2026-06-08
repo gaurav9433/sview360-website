@@ -128,3 +128,53 @@
     animateCounters();
   }
 })();
+
+/* ============================================================
+   PRICING — deployment-model tabs + billing toggle
+   ============================================================ */
+(function () {
+  "use strict";
+
+  /* ---------- Deployment model tabs ---------- */
+  var tabs = document.querySelectorAll(".deploy-tab");
+  var panels = {
+    cloud: document.getElementById("panel-cloud"),
+    hybrid: document.getElementById("panel-hybrid"),
+    onprem: document.getElementById("panel-onprem")
+  };
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var target = tab.getAttribute("data-tab");
+
+      tabs.forEach(function (t) {
+        var active = t === tab;
+        t.classList.toggle("is-active", active);
+        t.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      Object.keys(panels).forEach(function (key) {
+        if (!panels[key]) return;
+        if (key === target) { panels[key].removeAttribute("hidden"); }
+        else { panels[key].setAttribute("hidden", ""); }
+      });
+    });
+  });
+
+  /* ---------- Billing toggle (Monthly / Annual) ---------- */
+  var billingOpts = document.querySelectorAll(".bt-opt");
+  var cloudGrid = document.getElementById("cloudGrid");
+
+  billingOpts.forEach(function (opt) {
+    opt.addEventListener("click", function () {
+      billingOpts.forEach(function (o) {
+        var active = o === opt;
+        o.classList.toggle("is-active", active);
+        o.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+      if (cloudGrid) {
+        cloudGrid.classList.toggle("show-annual", opt.getAttribute("data-billing") === "annual");
+      }
+    });
+  });
+})();
