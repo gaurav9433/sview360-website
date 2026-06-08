@@ -31,7 +31,7 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px; font-weight: 400; line-height: 1.7;
   color: var(--white); background: var(--navy);
-  overflow-x: hidden;
+  overflow-x: hidden; max-width: 100vw;
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
 
@@ -399,6 +399,9 @@ h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
 /* ============================================================
    PRICING
    ============================================================ */
+#pricing .container {
+  max-width: 1320px; margin: 0 auto; padding: 0 24px; width: 100%; box-sizing: border-box;
+}
 .pricing-subtitle { max-width: 720px; margin-bottom: 48px; }
 
 /* ---------- Deployment model tabs ---------- */
@@ -431,11 +434,27 @@ h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
 .bt-opt.is-active { background: var(--blue); color: var(--white); }
 
 /* ---------- Cloud plan grid ---------- */
-.cloud-pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; align-items: stretch; }
+.cloud-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+@media (max-width: 1400px) {
+  .cloud-pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .cloud-pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .cloud-pricing-grid { grid-template-columns: 1fr; }
+}
 .pricing-card {
   background: var(--white); border: 1px solid var(--border); border-radius: 12px;
   padding: 32px; display: flex; flex-direction: column; position: relative;
   transition: transform var(--ease), box-shadow var(--ease);
+  min-width: 0; word-break: break-word; overflow-wrap: break-word;
 }
 .pricing-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
 .pricing-featured { border-top: 3px solid var(--blue); box-shadow: 0 12px 32px rgba(10, 132, 255, 0.14); }
@@ -445,7 +464,7 @@ h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
   text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 14px; border-radius: 100px; white-space: nowrap;
 }
 .plan-name { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-bottom: 12px; }
-.plan-price { font-size: 40px; font-weight: 800; color: var(--panel); line-height: 1; letter-spacing: -0.02em; }
+.plan-price { font-size: clamp(28px, 3vw, 40px); font-weight: 800; color: var(--panel); line-height: 1; letter-spacing: -0.02em; }
 .plan-unit { font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 2px; }
 .plan-price-custom { font-size: 40px; }
 .min-note { font-size: 13px; color: var(--muted); margin-top: 10px; margin-bottom: 20px; }
@@ -609,9 +628,6 @@ h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1280px) {
-  .cloud-pricing-grid { grid-template-columns: repeat(3, 1fr); }
-}
 
 @media (max-width: 1024px) {
   h1 { font-size: 52px; }
@@ -657,7 +673,6 @@ h3 { font-size: 22px; font-weight: 600; line-height: 1.3; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
   .deploy-grid { grid-template-columns: 1fr; }
-  .cloud-pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
   .model-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
   .deploy-tabs { width: 100%; }
   .deploy-tab { flex: 1; min-width: 0; padding: 10px 8px; font-size: 13px; }
