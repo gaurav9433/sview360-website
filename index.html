@@ -25,43 +25,53 @@
 
   <!-- ============ NAVBAR ============ -->
   <nav class="navbar" id="navbar" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="brand" aria-label="SView360 home">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0a84ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="SView360 shield and camera logo">
-            <path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <span class="brand-name">SView360</span>
-          <span class="brand-sub">by SEPLE NovaEdge</span>
-        </span>
-      </a>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#problem-solution">Why SView360</a>
-        <a href="#platform">Platform</a>
-        <a href="#industries">Industries</a>
-        <a href="#analytics">AI Analytics</a>
-        <a href="#governance">Security</a>
-        <a href="#deployment">Deployment</a>
-        <a href="#integrators">Integrators</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-outline btn-sm" href="mailto:sales@seple.in" aria-label="Request a demo by email">Request Demo</a>
-        <a class="btn btn-cta btn-sm nav-login" href="https://app.sview360.seple.in/login" target="_blank" rel="noopener" aria-label="Login to SView360 platform">Login →</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
+    <a href="#hero" class="nav-logo" aria-label="SView360 home">
+      <span class="nav-logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0a84ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="SView360 shield and camera logo">
+          <path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/>
+          <circle cx="12" cy="10" r="3"/>
         </svg>
-      </button>
+      </span>
+      <span class="nav-logo-text">
+        <span class="nav-logo-name">SView360</span>
+        <span class="nav-logo-sub">by SEPLE NovaEdge</span>
+      </span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#industries">Solutions</a></li>
+      <li><a href="#analytics">AI Analytics</a></li>
+      <li><a href="#governance">Security</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="mailto:sales@seple.in" class="nav-btn-demo">Request Demo</a>
+      <a href="https://app.sview360.seple.in/login" target="_blank" rel="noopener" class="nav-btn-login">Login →</a>
     </div>
+
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" id="nav-hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <a href="#platform">Platform</a>
+    <a href="#industries">Solutions</a>
+    <a href="#analytics">AI Analytics</a>
+    <a href="#governance">Security</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <div class="nav-mobile-actions">
+      <a href="mailto:sales@seple.in" class="nav-mobile-demo">Request Demo</a>
+      <a href="https://app.sview360.seple.in/login" target="_blank" rel="noopener" class="nav-mobile-login">Login →</a>
+    </div>
+  </div>
 
   <main>
 

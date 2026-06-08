@@ -21,33 +21,7 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- 2. Mobile hamburger menu ---------- */
-  var hamburger = document.getElementById("hamburger");
-  var navLinks = document.getElementById("navLinks");
-
-  function closeMenu() {
-    navLinks.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
-  }
-
-  hamburger.addEventListener("click", function (e) {
-    e.stopPropagation();
-    var isOpen = navLinks.classList.toggle("open");
-    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  // Close on link click
-  navLinks.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // Close on outside click
-  document.addEventListener("click", function (e) {
-    if (navLinks.classList.contains("open") &&
-        !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-      closeMenu();
-    }
-  });
+  /* ---------- 2. Mobile hamburger menu — see dedicated IIFE below ---------- */
 
   /* ---------- 3. Smooth scroll (JS fallback for older browsers) ---------- */
   if (!("scrollBehavior" in document.documentElement.style)) {
@@ -253,4 +227,35 @@
   model.addEventListener("change", calc);
   current.addEventListener("input", calc);
   calc();
+})();
+
+/* ============================================================
+   MOBILE NAVBAR HAMBURGER
+   ============================================================ */
+(function () {
+  var btn = document.getElementById('nav-hamburger-btn');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function () {
+    var isOpen = menu.classList.contains('open');
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', !isOpen);
+  });
+
+  // Close menu on nav link click
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function (e) {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
 })();
