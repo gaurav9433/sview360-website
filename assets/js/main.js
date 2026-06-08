@@ -178,3 +178,79 @@
     });
   });
 })();
+
+/* ============================================================
+   FAQ ACCORDION (one open at a time)
+   ============================================================ */
+(function () {
+  "use strict";
+  var items = document.querySelectorAll(".faq-item");
+
+  function toggle(item) {
+    var isOpen = item.classList.contains("open");
+    items.forEach(function (i) {
+      i.classList.remove("open");
+      var q = i.querySelector(".faq-question");
+      if (q) q.setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) {
+      item.classList.add("open");
+      var q = item.querySelector(".faq-question");
+      if (q) q.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  items.forEach(function (item) {
+    var q = item.querySelector(".faq-question");
+    if (!q) return;
+    q.addEventListener("click", function () { toggle(item); });
+    q.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(item); }
+    });
+  });
+})();
+
+/* ============================================================
+   ROI CALCULATOR
+   ============================================================ */
+(function () {
+  "use strict";
+  var cameras = document.getElementById("roi-cameras");
+  var model = document.getElementById("roi-model");
+  var current = document.getElementById("roi-current");
+  var resMo = document.getElementById("res-monthly");
+  var resCurMo = document.getElementById("res-current-monthly");
+  var resSavMo = document.getElementById("res-saving-monthly");
+  var resSavAn = document.getElementById("res-saving-annual");
+  var licNote = document.getElementById("roi-license-note");
+
+  if (!cameras || !model || !current) return;
+
+  // One-time platform license applies to hybrid models only
+  var licFees = { "149": 0, "198": 100000, "248": 100000, "298": 100000 };
+
+  function fmt(n) { return "₹" + Math.round(n).toLocaleString("en-IN"); }
+
+  function calc() {
+    var c = parseInt(cameras.value, 10) || 100;
+    var m = parseFloat(model.value) || 149;
+    var cur = parseFloat(current.value) || 500;
+
+    var monthSV = c * m;
+    var monthCur = c * cur;
+    var savMo = monthCur - monthSV;
+    var lic = licFees[String(m)] || 0;
+    var savAn = (savMo * 12) - lic;
+
+    if (resMo) resMo.textContent = fmt(monthSV) + "/mo";
+    if (resCurMo) resCurMo.textContent = fmt(monthCur) + "/mo";
+    if (resSavMo) resSavMo.textContent = savMo > 0 ? fmt(savMo) + "/mo" : "—";
+    if (resSavAn) resSavAn.textContent = savAn > 0 ? fmt(savAn) + "/yr" : "Contact us";
+    if (licNote) licNote.style.display = (m !== 149 && lic > 0) ? "block" : "none";
+  }
+
+  cameras.addEventListener("input", calc);
+  model.addEventListener("change", calc);
+  current.addEventListener("input", calc);
+  calc();
+})();
