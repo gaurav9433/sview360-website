@@ -34,16 +34,22 @@ python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-## Deployment — Cloudflare Pages
+## Deployment — GitHub Pages
 
-- **Build command:** none
-- **Build output directory:** `/` (repository root)
-- **Framework preset:** None / Static HTML
+This site is served by **GitHub Pages** directly from the repository.
+
+- **Source:** `master` branch, root folder (`/`)
+- **Build:** none — static HTML served as-is
+- **Repo Pages URL:** https://gaurav9433.github.io/sview360-website/
+- Enable/verify under **Settings → Pages** (Source: *Deploy from a branch* → `master` / `/root`).
 
 ### Custom Domain
 
 - Production: **sview360.seple.in**
-- Configure DNS via GoDaddy: add a **CNAME** record pointing `sview360` to the Cloudflare Pages project URL (e.g. `sview360-website.pages.dev`).
+- The `CNAME` file in the repo root pins the custom domain for GitHub Pages.
+- Configure DNS via GoDaddy: add a **CNAME** record pointing `sview360` to **`gaurav9433.github.io`**.
+  (For an apex/root domain you would instead use GitHub Pages `A`/`AAAA` records; this is a subdomain, so a CNAME is correct.)
+- After DNS propagates, enable **Enforce HTTPS** in Settings → Pages.
 
 ### Login Target
 
